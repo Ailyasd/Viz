@@ -173,8 +173,8 @@ body {
 }
 
 .promo__card-icon {
-  width: 56px;
-  height: 56px;
+  width: 94px;
+  height: 94px;
   object-fit: contain;
   display: block;
 }
@@ -382,9 +382,9 @@ body {
 
 .promo__grid-links {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 12px;
-  width: 100%;
+  width: 70%;
   max-width: 760px;
   margin: 0 auto;
 }
@@ -524,8 +524,8 @@ body {
   }
 
   .promo__card-icon {
-    width: 64px;
-    height: 64px;
+    width: 94px;
+    height: 94px;
   }
 
   .promo__title {
