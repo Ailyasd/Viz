@@ -1,0 +1,604 @@
+/* Общие сбросы */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #f4f6f9;
+}
+.page {
+    font-family: "Montserrat", sans-serif;
+}
+
+/* ----- Шапка (полностью прозрачная) ----- */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    background: transparent;
+    box-shadow: none;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.top-bar__logo-link {
+    flex-shrink: 0;
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+.top-bar__logo {
+    height: 80px;
+    width: auto;
+    display: block;
+}
+.top-bar__nav {
+    margin-left: -70px; /* ваш сдвиг для центровки */
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 1 1 auto;
+}
+.top-bar__nav .promo__nav-btn {
+    background: rgba(255,255,255,0.9);
+    border: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #252b42;
+    padding: 10px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.2s;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.top-bar__nav .promo__nav-btn:hover {
+    background: #2e7d32;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+}
+.top-bar__nav .promo__nav-btn:active {
+    transform: scale(0.96);
+}
+.top-bar__nav .promo__nav-btn--active {
+    background: #2e7d32;
+    color: #ffffff;
+}
+.top-bar__institute-link {
+    flex-shrink: 0;
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+.top-bar__institute {
+    height: 130px;
+    width: auto;
+    display: block;
+}
+
+/* ----- Основная секция ----- */
+.main {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.promo {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("Fon.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: #f4f6f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 20px 20px;
+    box-sizing: border-box;
+}
+.promo__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* ----- Центральный блок ----- */
+.promo__hero {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    flex: 0 1 auto;
+    width: 100%;
+}
+.promo__title-main {
+    font-size: 64px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/* ----- Кнопка "Записаться на прием" с ТАКИМИ ЖЕ hover-эффектами, как у кнопок меню ----- */
+.promo__appointment-btn {
+    display: inline-block;
+    background: #ffffff;
+    color: #252b42;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 14px 40px;
+    border-radius: 30px; /* такой же скругление, как у кнопок меню */
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06); /* такая же тень, как у кнопок меню */
+    transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.2s; /* такие же transition */
+    width: 100%;
+    max-width: 560px;
+    box-sizing: border-box;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+}
+.promo__appointment-btn:hover {
+    background: #2e7d32; /* такой же цвет, как у кнопок меню при hover */
+    color: #ffffff; /* белый текст, как у кнопок меню */
+    transform: translateY(-2px); /* такой же подъем */
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3); /* такая же тень */
+}
+.promo__appointment-btn:active {
+    transform: scale(0.96); /* такой же эффект нажатия */
+}
+
+/* ----- Нижний блок: две карточки ----- */
+.promo__grid-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    flex-shrink: 0;
+}
+.promo__grid-item {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+    aspect-ratio: 1 / 1;
+    gap: 8px;
+}
+.promo__grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+.promo__grid-icon {
+    width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+    display: block;
+}
+.promo__grid-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: #252b42;
+    text-align: center;
+    margin-top: 2px;
+}
+
+/* ----- Модальное окно для табов ----- */
+.info-card {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    padding: 24px;
+    box-sizing: border-box;
+}
+.info-card--expanded {
+    display: flex;
+}
+.info-card__inner {
+    background: #ffffff;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 900px;
+    max-height: calc(100% - 48px);
+    padding: 30px 35px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    animation: fadeScale 0.25s ease;
+}
+@keyframes fadeScale {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+}
+.info-card__pane {
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+    overflow: hidden;
+}
+.info-card__pane--active {
+    display: flex;
+}
+.info-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-shrink: 0;
+}
+.info-card__title {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+    color: #252b42;
+}
+.info-card__back-btn {
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: #737373;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 8px;
+    transition: color 0.2s, transform 0.2s;
+}
+.info-card__back-btn:hover {
+    color: #252b42;
+    transform: scale(1.15);
+}
+.info-card__scrollable {
+    overflow-y: auto;
+    flex: 1;
+    padding-right: 6px;
+}
+.info-card__text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #252b42;
+    margin: 0 0 12px 0;
+}
+.info-card__subtitle {
+    font-size: 17px;
+    color: #252b42;
+    margin: 18px 0 8px 0;
+    font-weight: 700;
+}
+.info-card__list {
+    margin: 0 0 14px 0;
+    padding-left: 20px;
+}
+.info-card__list li {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #252b42;
+    margin-bottom: 8px;
+}
+
+/* Руководство */
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+.team-card {
+    background: #f4f6f9;
+    border-radius: 12px;
+    padding: 16px;
+}
+.team-card__role {
+    font-size: 11px;
+    color: #737373;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+.team-card__name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #252b42;
+    margin-bottom: 6px;
+}
+.team-card__phone {
+    font-size: 14px;
+    color: #0061ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Контакты */
+.contacts-tabs {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+.contacts-tabs__nav {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-shrink: 0;
+}
+.contacts-tabs__btn {
+    background: #f4f6f9;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #737373;
+    transition: background 0.2s, color 0.2s;
+}
+.contacts-tabs__btn--active {
+    background: #252b42;
+    color: #ffffff;
+}
+.contacts-tabs__content {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+.contacts-pane {
+    display: none;
+}
+.contacts-pane--active {
+    display: block;
+}
+.contacts-pane__item {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #252b42;
+    margin: 0 0 10px 0;
+}
+.contacts-pane__item a {
+    color: #0061ff;
+    text-decoration: none;
+}
+.contacts-pane__divider {
+    border: none;
+    border-top: 1px dashed #d3d3d3;
+    margin: 14px 0;
+}
+.location-btn {
+    background: #2e7d32;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px !important;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(46,125,50,0.15);
+    transition: background 0.3s, transform 0.2s;
+}
+.location-btn:hover {
+    background: #235e26;
+}
+.location-btn:active {
+    transform: scale(0.97);
+}
+
+/* Модальное окно карты */
+.map-modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(37,43,66,0.6);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+.map-modal--active {
+    opacity: 1;
+    visibility: visible;
+}
+.map-modal__container {
+    background: #ffffff;
+    width: 90%;
+    max-width: 700px;
+    height: 60vh;
+    max-height: 450px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.9);
+    transition: transform 0.3s;
+}
+.map-modal--active .map-modal__container {
+    transform: scale(1);
+}
+.map-modal__close {
+    position: absolute;
+    top: 10px; right: 14px;
+    background: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 32px; height: 32px;
+    font-size: 24px;
+    color: #737373;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    z-index: 102;
+}
+.map-modal__body {
+    width: 100%;
+    height: 100%;
+}
+
+/* ----- Адаптивность (мобильные) ----- */
+@media (max-width: 767px) {
+    .top-bar {
+        padding: 8px 12px;
+        background: transparent;
+    }
+    .top-bar__logo {
+        height: 32px;
+    }
+    .top-bar__institute {
+        height: 32px;
+    }
+    .top-bar__nav {
+        margin-left: 0; /* убираем сдвиг на мобильных */
+        order: 3;
+        flex-basis: 100%;
+        gap: 4px;
+        justify-content: center;
+    }
+    .top-bar__nav .promo__nav-btn {
+        font-size: 14px;
+        padding: 6px 12px;
+        background: rgba(255,255,255,0.9);
+    }
+    .promo {
+        padding: 80px 12px 16px;
+    }
+    .promo__container {
+        gap: 16px;
+    }
+    .promo__title-main {
+        font-size: 38px;
+    }
+    .promo__appointment-btn {
+        font-size: 16px;
+        padding: 14px 20px;
+        max-width: 100%;
+    }
+    .promo__grid-links {
+        gap: 12px;
+        max-width: 400px;
+    }
+    .promo__grid-item {
+        padding: 10px 8px;
+        border-radius: 16px;
+    }
+    .promo__grid-icon {
+        width: 85%;
+        max-height: 85%;
+    }
+    .promo__grid-label {
+        font-size: 14px;
+    }
+    .info-card {
+        padding: 16px;
+    }
+    .info-card__inner {
+        padding: 18px 20px;
+        max-height: calc(100% - 32px);
+        border-radius: 16px;
+    }
+    .info-card__title {
+        font-size: 22px;
+    }
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .contacts-tabs__btn {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+    .info-card__text {
+        font-size: 14px;
+    }
+    .info-card__list li {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar__logo {
+        height: 28px;
+    }
+    .top-bar__institute {
+        height: 28px;
+    }
+    .top-bar__nav .promo__nav-btn {
+        font-size: 13px;
+        padding: 4px 10px;
+    }
+    .promo {
+        padding: 70px 8px 12px;
+    }
+    .promo__title-main {
+        font-size: 30px;
+    }
+    .promo__appointment-btn {
+        font-size: 15px;
+        padding: 12px 16px;
+    }
+    .promo__grid-links {
+        gap: 8px;
+        max-width: 340px;
+    }
+    .promo__grid-item {
+        padding: 8px 6px;
+    }
+    .promo__grid-label {
+        font-size: 12px;
+    }
+    .info-card {
+        padding: 12px;
+    }
+    .info-card__inner {
+        padding: 14px 16px;
+        max-height: calc(100% - 24px);
+    }
+    .info-card__title {
+        font-size: 20px;
+    }
+    .info-card__back-btn {
+        font-size: 28px;
+    }
+}
